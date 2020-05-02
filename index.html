@@ -3,6 +3,7 @@
 <script src="https://misc-flexiple.s3.amazonaws.com/pablo.min.js"></script>
 <script>
 function downloadPNG(id){
+
   Pablo(document.getElementById(id).firstElementChild).download('png', id+'.png', function(result){
         alert(result.error ? 'Fail' : 'Success');
     });
@@ -657,5 +658,14 @@ Download SVGs<br/><br/>
   </defs>
   </svg>
 </div>
+<script>
+document.getElementById('svg1').firstElementChild.setAttribute("xmlns:xlink","http://www.w3.org/1999/xlink");
+
+var a = document.createElement('a');
+a.href = "https://flexiple.com";
+a.appendChild(document.createTextNode("Found on Scale by Flexiple"));
+document.getElementById('svg1').firstElementChild.appendChild(a);
+console.log(document.getElementById('svg1').firstElementChild);
+</script>
 </body>
 </html>
